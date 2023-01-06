@@ -1,0 +1,38 @@
+<div class="row container gap-4">
+  <div class="col-4 border border-2 border-primary">
+    <input
+      class="form-control my-4 bg-light"
+      type="text"
+      placeholder="introduce un texto"
+      [(ngModel)]="frase"
+    />
+    <p class="fs-3 text-success">text : {{ frase | uppercase }}</p>
+  </div>
+
+  <div class="col-4 border border-2 border-primary">
+    <select
+      class="form-control border border-3 my-4 bg-light"
+      name="select"
+      [(ngModel)]="valor"
+    >
+      <option value="PEN">Soles</option>
+      <option value="EUR">Euros</option>
+      <option value="USD">Dolar</option>
+    </select>
+    <p class="fs-3 text-success">{{ 2 | currency : valor }}</p>
+  </div>
+  <div class="col-4 border border-2 border-primary">
+    <input
+      type="text"
+      class="form-control my-4 bg-light"
+      placeholder="ingresa texto"
+      value="{{ tiempo2 | date : 'medium' }}"
+    />
+
+    <p>res :{{ tiempo2 }}</p>
+    <p>res :{{ after2 | date : "mm0" }}min ago</p>
+    <p>res :{{ after2 | date : "hh" }}horas ago</p>
+    <p>res :{{ after2 | date : "c" }}dias ago</p>
+    <p>res :{{ after2 | date : "dd" }}mes ago</p>
+  </div>
+</div>
