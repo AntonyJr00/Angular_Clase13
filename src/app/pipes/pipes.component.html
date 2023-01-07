@@ -26,13 +26,15 @@
       type="text"
       class="form-control my-4 bg-light"
       placeholder="ingresa texto"
-      value="{{ tiempo2 | date : 'medium' }}"
+      [(ngModel)]="tiempoPasado"
     />
-
-    <p>res :{{ tiempo2 }}</p>
-    <p>res :{{ after2 | date : "mm0" }}min ago</p>
-    <p>res :{{ after2 | date : "hh" }}horas ago</p>
-    <p>res :{{ after2 | date : "c" }}dias ago</p>
-    <p>res :{{ after2 | date : "dd" }}mes ago</p>
+    <button class="btn btn-dark text-light" (click)="calcular()">
+      Calcular
+    </button>
+    <p class="fw-400 fs-4">res :{{ resp.segundos }} seconds ago</p>
+    <p class="fw-400 fs-4">res :{{ resp.minutos }} minutes ago</p>
+    <p class="fw-400 fs-4">res :{{ resp.horas }} hours ago</p>
+    <p class="fw-400 fs-4">res :{{ resp.dias }} days ago</p>
+    <p class="fw-400 fs-4">res :{{ resp.semanas }} weeks ago</p>
   </div>
 </div>
